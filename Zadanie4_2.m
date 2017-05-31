@@ -18,10 +18,26 @@ figure;
 plot(T,Y);
 
 %krok=0.0146583;
-%krok=0.0146582;
-krok=0.001;
+krok=0.0146582;
+%krok=0.001;
                 
 [ x, Tx, errx, t ]=RK4_staly_krok(dx, x0a, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+
+
+t
+
+%% a PK
+
+krok=0.1;
+
+[ x, Tx, errx, t ]=PKA(dx, x0a, przedzial, krok);
 
 figure;
 plot(Tx,x);
@@ -51,7 +67,19 @@ figure;
 plot(Tx, errx);
 
 t
+%% b PK
 
+krok=0.01;
+
+[ x, Tx, errx, t ]=PKA(dx, x0b, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
 %% c
 
 x0c=[8, 0];
@@ -72,7 +100,19 @@ figure;
 plot(Tx, errx);
 
 t
+%% c PK
 
+krok=0.01;
+
+[ x, Tx, errx, t ]=PKA(dx, x0c, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
 %% d
 
 x0d=[0.001, 0.001];
@@ -94,5 +134,18 @@ plot(Tx, errx);
 
 t
 
+%% d PK
+
+krok=0.5;
+
+[ x, Tx, errx, t ]=PKA(dx, x0d, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
 end
 
