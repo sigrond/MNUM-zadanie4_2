@@ -35,9 +35,21 @@ t
 
 %% a PK
 
-krok=0.1;
+krok=0.01;
 
 [ x, Tx, errx, t ]=PKA(dx, x0a, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
+%% a RKz
+
+
+[ x, Tx, errx, t ]=RK4_zmienny_krok(dx, x0a, przedzial);
 
 figure;
 plot(Tx,x);
@@ -80,6 +92,18 @@ figure;
 plot(Tx, errx);
 
 t
+%% b RKz
+
+
+[ x, Tx, errx, t ]=RK4_zmienny_krok(dx, x0b, przedzial);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
 %% c
 
 x0c=[8, 0];
@@ -105,6 +129,18 @@ t
 krok=0.01;
 
 [ x, Tx, errx, t ]=PKA(dx, x0c, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
+%% c RKz
+
+
+[ x, Tx, errx, t ]=RK4_zmienny_krok(dx, x0c, przedzial);
 
 figure;
 plot(Tx,x);
@@ -139,6 +175,18 @@ t
 krok=0.5;
 
 [ x, Tx, errx, t ]=PKA(dx, x0d, przedzial, krok);
+
+figure;
+plot(Tx,x);
+
+figure;
+plot(Tx, errx);
+
+t
+%% d RKz
+
+
+[ x, Tx, errx, t ]=RK4_zmienny_krok(dx, x0d, przedzial);
 
 figure;
 plot(Tx,x);
